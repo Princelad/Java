@@ -1,3 +1,4 @@
+package Practical4;
 
 import java.util.Scanner;
 
@@ -110,7 +111,7 @@ class Manager extends Member {
     }
 }
 
-public class Prac2 {
+public class practical2 {
     public static void main(String[] args) {
         try(Scanner scan = new Scanner(System.in)) {
             Employee employee = new Employee(null, 0, 0, null, 0, null);

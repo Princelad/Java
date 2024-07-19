@@ -1,3 +1,5 @@
+package Practical4;
+
 class Parent {
 
     public Parent() {
@@ -16,7 +18,7 @@ class Child extends Parent {
     }
 }
 
-public class Prac1 {
+public class practical1 {
     public static void main(String[] args) {
         Parent p = new Parent();
         Child c = new Child();

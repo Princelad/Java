@@ -1,3 +1,5 @@
+package Practical3;
+
 import java.util.Scanner;
 
 class TriangleArea {
