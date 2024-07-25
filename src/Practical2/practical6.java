@@ -1,27 +1,31 @@
 package Practical2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class practical6 {
+    static String sortString(String str) {
+        char[] charStr = str.toCharArray();
+
+        Arrays.sort(charStr);
+
+        return new String(charStr);
+    }
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int num;
-        num = sc.nextInt();
+        try(Scanner scan = new Scanner(System.in)) {
+            System.out.print("Enter the string : ");
+            String str = scan.nextLine();
+            StringBuilder nstr = new StringBuilder(str);
 
-        int rem;
+            System.out.println("Length of the string : " + str.length());
+            System.out.println("Lowercase of the string : " + str.toLowerCase());
+            System.out.println("Uppercase of the string : " + str.toUpperCase());
+            System.out.println("Reverse of the string : " + nstr.reverse());
+            System.out.println("Sort the string : " + sortString(str));
 
-        int res = 0;
-
-        while (num > 0) {
-            rem = num % 10;
-            res = (res * 10) + rem;
-            num = num / 10;
+            scan.close();
+            System.out.println("This Practical is made by 23CS037 - Prince lad ");
         }
-
-        System.out.println(res);
-
-        sc.close();
-
-        System.out.println("This Practical is made by 23CS037 - Prince lad ");
     }
 }

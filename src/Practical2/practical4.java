@@ -1,13 +1,28 @@
 package Practical2;
 
-public class practical4 {
-    public static void main(String[] args) {
-        int[][] arr = { {1}, {1, 2}, {1, 2, 3, 4, 5} };
+import java.util.Scanner;
 
-        for(int i = 0; i < 3; i++) {
-            System.out.printf("The length of the element %d is : %d\n", (i+1), arr[i].length);
+public class practical4 {
+    static String double_char(String str) {
+        String newStr = "";
+
+        for(int i = 0; i < str.length(); i++) {
+
+            newStr += String.format("%c%c", str.charAt(i), str.charAt(i));
         }
 
-        System.out.println("This Practical is made by 23CS037 - Prince lad ");
+        return newStr;
+    }
+
+    public static void main(String[] args) {
+        try(Scanner scan = new Scanner(System.in)) {
+            System.out.print("Enter the string : ");
+            String str = scan.nextLine();
+
+            System.out.println("Output : " + double_char(str));
+
+            scan.close();
+            System.out.println("This Practical is made by 23CS037 - Prince lad ");
+        }
     }
 }

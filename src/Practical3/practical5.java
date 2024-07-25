@@ -11,6 +11,7 @@ class areaRectangle {
         this.breadth = breadth;
     }
 
+    // returning the area of the rectangle.
     public int returnArea() {
         return (length*breadth);
     }

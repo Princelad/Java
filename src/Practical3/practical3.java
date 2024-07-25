@@ -13,6 +13,7 @@ class Employee {
         Salary = 0.0;
     }
 
+    // getting the user data.
     public void getData() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter the first name : ");
@@ -26,6 +27,7 @@ class Employee {
         }
     }
 
+    // Printing the user data.
     public void putData() {
         System.out.println("Employee details : ");
         System.out.println("First name : " + firstName);
@@ -40,6 +42,7 @@ class Employee {
 
 public class practical3 {
     public static void main(String[] args) {
+        // Instantiating an object for the showcase.
         Employee e = new Employee();
 
         e.getData();

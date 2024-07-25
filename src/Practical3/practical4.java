@@ -11,6 +11,7 @@ class Date {
         this.Year = Year;
     }
 
+    // Getters and setters
     public int getMonth() {
         return Month;
     }
@@ -56,7 +57,7 @@ public class practical4 {
         int option;
         boolean flag;
         do {
-            mainMenu();
+            mainMenu();// Prints a MainMenu.
             System.out.print("Enter the operation : ");
             option = scan.nextInt();
             switch(option){
@@ -91,7 +92,7 @@ public class practical4 {
             }
             System.out.print("Do you want to exit ? 1/0 : ");
             flag = scan.nextBoolean();
-        } while (flag);
+        } while (flag);// Continue till flag is false.
 
         scan.close();
     }

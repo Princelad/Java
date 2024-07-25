@@ -3,18 +3,33 @@ package Practical2;
 import java.util.Scanner;
 
 public class practical3 {
+    static boolean array_front9(int[] arr) {
+
+        for(int i = 0; i < 4; i++){
+            if(arr[i] != 9) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        double var = sc.nextDouble();
+        try(Scanner scan = new Scanner(System.in)) {
+            System.out.print("Enter the size : ");
+            int size = scan.nextInt();
 
-        int x = (int)var;
+            int[] arr = new int[size];
 
-        short y = (short)((var-x)*1000);
+            System.out.print("Enter the array : ");
+            for (int i = 0; i < size; i++) {
+                arr[i] = scan.nextInt();
+            }
 
-        System.out.println("\nthe value is : "+x+"."+y);
+            System.out.println("'9' in first 4 elements : " + array_front9(arr));
 
-        sc.close();
-
-        System.out.println("This Practical is made by 23CS037 - Prince lad ");
+            scan.close();
+            System.out.println("This Practical is made by 23CS037 - Prince lad ");
+        }
     }
 }
