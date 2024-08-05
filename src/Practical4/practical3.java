@@ -24,6 +24,10 @@ class Square extends Rectangle {
     public Square(int length, int breadth) {
         super(length, breadth);
     }
+
+    public Square(int side) {
+        super(side, side);
+    }
 }
 
 public class practical3 {
@@ -44,7 +48,7 @@ public class practical3 {
         System.out.println("Enter the side of square: ");
         int side = sc.nextInt();
 
-        squares[1] = new Square(side, side);
+        squares[1] = new Square(side);
         System.out.println("Area of square is " + squares[1].area());
         System.out.println("Perimeter of square is " + squares[1].perimeter());
     }
