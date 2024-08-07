@@ -2,64 +2,56 @@ package Practical4;
 
 import java.util.Scanner;
 
-interface shape {
+interface Shape {
     void capture();
 }
 
-interface sign {
-    void text(String text);
+interface Sign {
+    default void text(String text){
+        System.out.println("Text on the sign: " + text);
+    }
 }
 
-class rectangle implements shape,sign {
+class rectangleSign implements Shape, Sign {
     private final double width;
     private final double length;
     private final String color;
 
-    public rectangle(double width, double length, String color, String text) {
+    public rectangleSign(double width, double length, String color, String text) {
         this.width = width;
         this.length = length;
         this.color = color;
-        capture();
-        text(text);
+        this.capture();
+        this.text(text);
     }
 
     @Override
     public void capture() {
-        System.out.printf("Rectangle is created for width = %.2f, length = %.2f and color = %s.\n", width, length, color);
-    }
-
-    @Override
-    public void text(String text) {
-        System.out.println("Rectangle is created for text = " + text);
+        System.out.printf("Rectangle is created with width = %.2f, length = %.2f and color = %s.\n", width, length, color);
     }
 }
 
-class circle implements shape,sign {
+class circleSign implements Shape, Sign {
     private final double radius;
     private final String color;
 
-    public circle(double radius, String color, String text) {
+    public circleSign(double radius, String color, String text) {
         this.radius = radius;
         this.color = color;
-        capture();
-        text(text);
+        this.capture();
+        this.text(text);
     }
 
     @Override
     public void capture() {
-        System.out.printf("Circle is created for radius = %.2f, color = %s.\n", radius, color);
-    }
-
-    @Override
-    public void text(String text) {
-        System.out.println("Circle is created for text = " + text);
+        System.out.printf("Circle is created with radius = %.2f and color = %s.\n", radius, color);
     }
 }
 
 public class practical7 {
 
     static void menu() {
-        System.out.println("Choose :");
+        System.out.println("Choose:");
         System.out.println("1. Rectangle");
         System.out.println("2. Circle");
         System.out.println("3. Exit");
@@ -71,7 +63,7 @@ public class practical7 {
 
         int choice;
 
-        do{
+        do {
             menu();
             choice = sc.nextInt();
 
@@ -84,8 +76,9 @@ public class practical7 {
                     System.out.println("Enter the color of the rectangle: ");
                     String color = sc.next();
                     System.out.println("Enter the text of the sign: ");
-                    String text = sc.next();
-                    new rectangle(width, length, color, text);
+                    sc.nextLine();  // Consume newline left-over
+                    String text = sc.nextLine();
+                    new rectangleSign(width, length, color, text);
                 }
                 case 2 -> {
                     System.out.println("Enter the radius of the circle: ");
@@ -93,13 +86,14 @@ public class practical7 {
                     System.out.println("Enter the color of the circle: ");
                     String color = sc.next();
                     System.out.println("Enter the text of the sign: ");
-                    String text = sc.next();
-                    new circle(radius, color, text);
+                    sc.nextLine();  // Consume newline left-over
+                    String text = sc.nextLine();
+                    new circleSign(radius, color, text);
                 }
                 case 3 -> System.out.println("Exiting program...");
                 default -> System.out.println("Invalid choice");
             }
-        }while(choice != 3);
+        } while (choice != 3);
 
         sc.close();
     }
