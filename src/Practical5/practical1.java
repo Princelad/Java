@@ -9,10 +9,12 @@ public class practical1 {
         int x = sc.nextInt();
         System.out.println("Enter the value for y :");
         int y = sc.nextInt();
+        int div = 0;
         try {
-            int div = x / y;
-        }catch(ArithmeticException e) {
+            div = x / y;
+        } catch (ArithmeticException e) {
             System.out.println(e);
         }
+        System.out.println(div);
     }
 }
