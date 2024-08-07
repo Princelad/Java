@@ -16,12 +16,15 @@ interface P12 extends P1, P2 {
 }
 
 class Q implements P12 {
+    @Override
     public void displayP1() {
         System.out.println("Constant in P1 :" + c1);
     }
+    @Override
     public void displayP2() {
         System.out.println("Constant in P2 :" + c2);
     }
+    @Override
     public void displayP12() {
         System.out.println("Constant in P12 :" + c3);
     }
