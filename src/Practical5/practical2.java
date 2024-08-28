@@ -28,7 +28,7 @@ public class practical2 {
         }
 
         try {
-            throw new Exception("MyException[prams]");
+            throw new Exception("MyException[" + args[0] + "]");
         } catch (Exception e) {
             e.printStackTrace();
         }

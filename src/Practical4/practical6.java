@@ -2,7 +2,8 @@ package Practical4;
 
 interface P1 {
     int c1 = 10;
-    void displayP1();
+    void
+    displayP1();
 }
 
 interface P2 {

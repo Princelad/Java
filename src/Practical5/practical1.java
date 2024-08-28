@@ -13,7 +13,7 @@ public class practical1 {
         try {
             div = x / y;
         } catch (ArithmeticException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         System.out.println(div);
     }
