@@ -1,19 +1,16 @@
 package Practical5;
 
-import java.io.*;
-
 public class practical3 {
 
-    public static void method() throws FileNotFoundException {
-        throw new FileNotFoundException();
+    static void userDefinedError() throws Exception {
+        throw new Exception("User-defined error");
     }
 
     public static void main(String[] args) {
         try {
-            method();
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found.");
+            userDefinedError();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-        System.out.println("rest of the code...");
     }
 } 
